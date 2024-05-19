@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { fabric } from 'fabric';
 
 // Define the Canvas component
-function Canvas() {
+function Canvas({ onSave }) {
     const canvasRef = useRef(null);
     const canvasInstance = useRef(null);
 
@@ -35,13 +35,20 @@ function Canvas() {
         canvasInstance.current.isDrawingMode = true;
     };
 
+    // Save the canvas
+    const handleSaveCanvas = () => {
+        const drawingData = canvasInstance.current.toDataURL();
+        onSave(drawingData);
+    };
+
     // Render the component
     return (
         <div className="flex flex-col items-center">
             <div className="mb-4">
                 <button onClick={handleDrawMode} className="bg-blue-500 text-white px-4 py-2 rounded mr-2">Draw</button>
                 <button onClick={handleEraseMode} className="bg-red-500 text-white px-4 py-2 rounded mr-2">Erase</button>
-                <button onClick={handleClearCanvas} className="bg-gray-500 text-white px-4 py-2 rounded">Clear</button>
+                <button onClick={handleClearCanvas} className="bg-gray-500 text-white px-4 py-2 rounded mr-2">Clear</button>
+                <button onClick={handleSaveCanvas} className="bg-green-500 text-white px-4 py-2 rounded">Save</button>
             </div>
             <canvas ref={canvasRef} width={800} height={600} className="border"></canvas>
         </div>

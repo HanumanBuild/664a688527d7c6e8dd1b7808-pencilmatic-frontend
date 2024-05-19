@@ -1,10 +1,13 @@
+// Import necessary modules
 import React, { useState } from 'react';
 import { login } from '../services/api';
 
+// Define the Login component
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -16,6 +19,7 @@ function Login() {
         }
     };
 
+    // Render the login form
     return (
         <div className="min-h-screen flex items-center justify-center">
             <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
@@ -46,4 +50,5 @@ function Login() {
     );
 }
 
+// Export the Login component
 export default Login;

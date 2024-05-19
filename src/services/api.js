@@ -9,3 +9,21 @@ export const register = (email, password) => {
 export const login = (email, password) => {
     return axios.post(`${API_URL}/api/user/login`, { email, password });
 };
+
+export const saveDrawing = (drawingData) => {
+    const token = localStorage.getItem('token');
+    return axios.post(`${API_URL}/api/drawings/save`, { drawingData }, {
+        headers: {
+            'auth-token': token
+        }
+    });
+};
+
+export const getDrawings = () => {
+    const token = localStorage.getItem('token');
+    return axios.get(`${API_URL}/api/drawings/all`, {
+        headers: {
+            'auth-token': token
+        }
+    });
+};
