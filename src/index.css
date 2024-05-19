@@ -1,3 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Ensure TailwindCSS directives are included */
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+/* End of TailwindCSS directives */

@@ -16,9 +16,9 @@ function Signup() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
-            <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
-                <h2 className="text-2xl mb-4">Signup</h2>
+        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+            <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
+                <h2 className="text-2xl mb-4 text-center">Signup</h2>
                 <div className="mb-4">
                     <label className="block mb-2">Email</label>
                     <input

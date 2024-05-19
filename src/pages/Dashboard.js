@@ -29,14 +29,14 @@ function Dashboard() {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
             <Canvas onSave={handleSaveDrawing} />
-            <div className="mt-4">
-                <h2 className="text-2xl mb-4">Saved Drawings</h2>
+            <div className="mt-4 w-full max-w-4xl">
+                <h2 className="text-2xl mb-4 text-center">Saved Drawings</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {drawings.map((drawing, index) => (
-                        <div key={index} className="border p-4">
-                            <img src={drawing.drawingData} alt={`Drawing ${index + 1}`} />
+                        <div key={index} className="border p-4 bg-white rounded shadow-md">
+                            <img src={drawing.drawingData} alt={`Drawing ${index + 1}`} className="w-full h-auto" />
                         </div>
                     ))}
                 </div>
